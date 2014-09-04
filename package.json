@@ -1,23 +1,23 @@
 {
-  "name": "grunt-contrib-handlebars",
+  "name": "grunt-contrib-handlebars-rhengles",
   "description": "Precompile Handlebars templates to JST file.",
   "version": "0.8.0",
-  "homepage": "https://github.com/gruntjs/grunt-contrib-handlebars",
+  "homepage": "https://github.com/rhengles/grunt-contrib-handlebars",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gruntjs/grunt-contrib-handlebars.git"
+    "url": "git://github.com/rhengles/grunt-contrib-handlebars.git"
   },
   "bugs": {
-    "url": "https://github.com/gruntjs/grunt-contrib-handlebars/issues"
+    "url": "https://github.com/rhengles/grunt-contrib-handlebars/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/gruntjs/grunt-contrib-handlebars/blob/master/LICENSE-MIT"
+      "url": "https://github.com/rhengles/grunt-contrib-handlebars/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
