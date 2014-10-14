@@ -163,13 +163,18 @@ module.exports = function(grunt) {
         }
 
         if (options.amd) {
-					var amdPrefix = 'define(';
-					if ( options.amdNamed ) {
+					var amdPrefix = 'define(',
+						amdNamed = options.amdNamed;
+					if ( amdNamed ) {
 						var amdName = String(
 									filesTemplates[0] ||
 									filesPartials[0]
 								);
-						amdName = _.initial(amdName.split('.')).join('.');
+						//amdName = _.initial(amdName.split('.')).join('.');
+						amdName = amdName.replace(/\.[^\/]*$/, ''); // remove file extension
+						if ( amdNamed instanceof Function ) {
+							amdName = amdNamed(amdName);
+						}
 						amdPrefix += JSON.stringify(amdName) + ', ';
 					}
           // Wrap the file in an AMD define fn.

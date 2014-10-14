@@ -26,6 +26,12 @@ function filesAreEqual(actual, expected, fn) {
   );
 }
 
+function convertEOL(str) {
+	return str
+		.replace(/\r\n/g, '\n')
+		.replace(/\\r\\n/g, '\\n');
+}
+
 exports.handlebars = {
   compile: function(test) {
     test.expect(1);
@@ -97,7 +103,7 @@ exports.handlebars = {
     testhbs('processcontent.js', function(tpl) {
       var actual = tpl({name: 'Dude'});
       var expected = '<div>\n<span>this template has many spaces</span>\n</div>';
-      test.equal(actual, expected, 'should remove leading and trailing spaces');
+      test.equal(convertEOL(actual), expected, 'should remove leading and trailing spaces');
       test.done();
     });
   },
@@ -115,7 +121,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('amd_compile.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap everything with an AMD define block.');
+      test.equal(convertEOL(actual), expected, 'should wrap everything with an AMD define block.');
       test.done();
     });
   },
@@ -123,7 +129,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('amd_compile_direct.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap everything with an AMD define block and directly return the template.');
+      test.equal(convertEOL(actual), expected, 'should wrap everything with an AMD define block and directly return the template.');
       test.done();
     });
   },
@@ -131,7 +137,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('amd_compile_string_path.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap everything with an AMD define block and have a custom module name.');
+      test.equal(convertEOL(actual), expected, 'should wrap everything with an AMD define block and have a custom module name.');
       test.done();
     });
   },
@@ -139,7 +145,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('amd_compile_string_deps.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap everything with an AMD define block and have a custom module name.');
+      test.equal(convertEOL(actual), expected, 'should wrap everything with an AMD define block and have a custom module name.');
       test.done();
     });
   },
@@ -147,7 +153,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('amd_compile_array.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap everything with an AMD define block and have a custom module name.');
+      test.equal(convertEOL(actual), expected, 'should wrap everything with an AMD define block and have a custom module name.');
       test.done();
     });
   },
@@ -155,7 +161,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('commonjs_compile.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap everything with a CommonJS module.');
+      test.equal(convertEOL(actual), expected, 'should wrap everything with a CommonJS module.');
       test.done();
     });
   },
@@ -163,7 +169,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('commonjs_compile_direct.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap everything with a CommonJS and directly return the template.');
+      test.equal(convertEOL(actual), expected, 'should wrap everything with a CommonJS and directly return the template.');
       test.done();
     });
   },
@@ -223,7 +229,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('unknown_helpers.js', function(actual, expected) {
-      test.equal(actual, expected, 'should wrap unknown helpers by default.');
+      test.equal(convertEOL(actual), expected, 'should wrap unknown helpers by default.');
       test.done();
     });
   },
@@ -231,7 +237,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('known_helpers.js', function(actual, expected) {
-      test.equal(actual, expected, 'should support specifying known helpers.');
+      test.equal(convertEOL(actual), expected, 'should support specifying known helpers.');
       test.done();
     });
   },
@@ -239,7 +245,7 @@ exports.handlebars = {
     test.expect(1);
 
     filesAreEqual('only_known_helpers.js', function(actual, expected) {
-      test.equal(actual, expected, 'should support `knownHelpersOnly`.');
+      test.equal(convertEOL(actual), expected, 'should support `knownHelpersOnly`.');
       test.done();
     });
   },

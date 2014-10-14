@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-handlebars-rhengles",
   "description": "Precompile Handlebars templates to JST file.",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "homepage": "https://github.com/rhengles/grunt-contrib-handlebars",
   "author": {
     "name": "Grunt Team",
